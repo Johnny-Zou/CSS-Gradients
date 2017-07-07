@@ -1,0 +1,50 @@
+#fader {
+  background: grey;
+  z-index: 100; }
+  #fader.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: both; }
+
+#backgroundGradient1 {
+  background: linear-gradient(135deg, #02696d 0%, #f89921 100%); }
+
+#backgroundGradient2 {
+  background: linear-gradient(135deg, #f89921 0%, #FAD928 100%); }
+
+.gradient {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-delay: 0.35s;
+  animation-fill-mode: both; }
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100vh;
+  width: 100vw; }
+
+/*# sourceMappingURL=main.css.map */
