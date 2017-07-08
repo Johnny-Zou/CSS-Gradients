@@ -1,0 +1,119 @@
+// This .scss file contains the sass code the content and the animation for the content
+
+//variables
+@import 'variables';
+
+
+//content
+
+.contentParent{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	position: absolute;
+}
+
+.content{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.content * {
+	max-width: 900px;
+    text-align: center;
+    color: white;
+}
+
+//animation
+
+
+
+@keyframes slideLeftIn{
+	0% {left: 100vw;}
+	100% {left: 0;}
+}
+
+.slideLeftIn {
+    animation-name: slideLeftIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideRightIn{
+	0% {left: -100vw;}
+	100% {left: 0;}
+}
+
+.slideRightIn {
+    animation-name: slideRightIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideDownIn{
+	0% {top: -100vh;}
+	100% {top: 0;}
+}
+
+.slideDownIn {
+    animation-name: slideDownIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideUpIn{
+	0% {top: 100vh;}
+	100% {top: 0;}
+}
+
+.slideUpIn {
+    animation-name: slideUpIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideLeftOut{
+	0% {left: 0;}
+	100% {left: -100vw;}
+}
+
+.slideLeftOut {
+    animation-name: slideLeftOut;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes slideRightOut{
+	0% {left: 0;}
+	100% {left: 100vw;}
+}
+
+.slideRightOut {
+    animation-name: slideRightOut;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideDownOut{
+	0% {top: 0;}
+	100% {top: 100vh;}
+}
+
+.slideDownOut {
+    animation-name: slideDownOut;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slideUpOut{
+	0% {top: 0;}
+	100% {top: -100vw;}
+}
+.slideUpOut {
+    animation-name: slideUpOut;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+

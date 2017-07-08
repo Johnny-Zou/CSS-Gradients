@@ -25,6 +25,7 @@ $(document).ready(function(){
 					//up
 					if(currentStep[1] == 1 && currentStep[0] != 0){
 						moveBackground(currentStep,"up");
+						slideContent(currentStep,"up");
 					}
 					else{
 						keyDown = false;
@@ -34,6 +35,7 @@ $(document).ready(function(){
 					//down
 					if(currentStep[1] == 1 && currentStep[0] != 2){
 						moveBackground(currentStep,"down");
+						slideContent(currentStep,"down");
 					}
 					else{
 						keyDown = false;
@@ -43,6 +45,7 @@ $(document).ready(function(){
 					//left
 					if(currentStep[0] == 1 && currentStep[1] != 0){
 						moveBackground(currentStep,"left");
+						slideContent(currentStep,"left");
 					}
 					else{
 						keyDown = false;
@@ -52,6 +55,7 @@ $(document).ready(function(){
 					//right
 					if(currentStep[0] == 1 && currentStep[1] != 2){
 						moveBackground(currentStep,"right");
+						slideContent(currentStep,"right");
 					}
 					else{
 						keyDown = false;
@@ -67,7 +71,6 @@ $(document).ready(function(){
 function moveBackground(previousStep,direction){
 	console.log(direction);
 
-	var color = "black";
 	var nextStep = previousStep.slice();
 
 	switch(direction){
@@ -91,8 +94,8 @@ function moveBackground(previousStep,direction){
 	
 
 	function changeGradient(previousStep,newStep,direction){
-		console.log("previous " + previousStep);
-		console.log("new: " + newStep);
+		//console.log("previous " + previousStep);
+		//console.log("new: " + newStep);
 
 
 		//remove current gradient elements
@@ -104,24 +107,24 @@ function moveBackground(previousStep,direction){
 
 		if(direction == 'up' || direction == 'down'){
 			if(newStep[0] != 1){
-				console.log("1");
+				//console.log("1");
 				nextGradient = "<div id=\"backgroundGradient2\" class=\"gradient fadeIn\" style=\"background: linear-gradient(45deg, " + colorArray[newStep[0]][newStep[1]][0] + " 0%, " + colorArray[newStep[0]][newStep[1]][1] + " 100%); }\"></div>";
 				previousGradient = "<div id=\"backgroundGradient1\" class=\"gradient fadeOut\" style=\"background: linear-gradient(135deg, " + colorArray[previousStep[0]][previousStep[1]][0] + " 0%, " + colorArray[previousStep[0]][previousStep[1]][1] + " 100%); }\"></div>";
 			}
 			else{
-				console.log("2");
+				//console.log("2");
 				nextGradient = "<div id=\"backgroundGradient2\" class=\"gradient fadeIn\" style=\"background: linear-gradient(135deg, " + colorArray[newStep[0]][newStep[1]][0] + " 0%, " + colorArray[newStep[0]][newStep[1]][1] + " 100%); }\"></div>";
 				previousGradient = "<div id=\"backgroundGradient1\" class=\"gradient fadeOut\" style=\"background: linear-gradient(45deg, " + colorArray[previousStep[0]][previousStep[1]][0] + " 0%, " + colorArray[previousStep[0]][previousStep[1]][1] + " 100%); }\"></div>";
 			}
 		}
 		else{
-			console.log("3");
+			//console.log("3");
 			nextGradient = "<div id=\"backgroundGradient2\" class=\"gradient fadeIn\" style=\"background: linear-gradient(135deg, " + colorArray[newStep[0]][newStep[1]][0] + " 0%, " + colorArray[newStep[0]][newStep[1]][1] + " 100%); }\"></div>";
 			previousGradient = "<div id=\"backgroundGradient1\" class=\"gradient fadeOut\" style=\"background: linear-gradient(135deg, " + colorArray[previousStep[0]][previousStep[1]][0] + " 0%, " + colorArray[previousStep[0]][previousStep[1]][1] + " 100%); }\"></div>";
 		}
 		
-		$("body").prepend(nextGradient);
-		$("body").prepend(previousGradient);
+		$("header").after(nextGradient);
+		$("header").after(previousGradient);
 
 		setTimeout(function(){
 			currentStep = newStep.slice();
