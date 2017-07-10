@@ -138,7 +138,7 @@
   animation-duration: 1s;
   animation-fill-mode: both; }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
