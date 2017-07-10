@@ -1,6 +1,5 @@
 //This javascript code will slide in new content on arrow press
 
-
 var content = [
 	['<div id="Search" class="content"><h1 class="title">Login</h1><p class="paragraph">INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE</p></div>'],
 	['<div id="Search" class="content"><h1 class="title">About</h1><p class="paragraph">INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE INSERT CONTENT HERE</p></div>'],
@@ -89,8 +88,8 @@ function slideContent(previousStep,direction){
 	var newPage = "<div id='contentParent2' class=\"contentParent page slide" + Capdirection + "In\">"+ content[nextPageid] +"</div>";
 	var oldPage = "<div id='contentParent1' class=\"contentParent page slide slide"+Capdirection+"Out\">"+ content[previousPageid] +"</div>";
 
-	$("#backgroundGradient2").after(newPage);
-	$("#backgroundGradient2").after(oldPage);
+	$("#allContent").append(newPage);
+	$("#allContent").append(oldPage);
 }
 
 

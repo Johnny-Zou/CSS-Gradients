@@ -132,7 +132,7 @@
   0% {
     top: 0; }
   100% {
-    top: -100vw; } }
+    top: -100vh; } }
 .slideUpOut {
   animation-name: slideUpOut;
   animation-duration: 1s;
@@ -149,5 +149,13 @@ body {
 * {
   font-family: "Arial";
   font-variant: normal; }
+
+#allContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw; }
 
 /*# sourceMappingURL=main.css.map */

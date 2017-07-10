@@ -15,9 +15,8 @@ var colorArray = [
 
 var keyDown = false;
 $(document).ready(function(){
-
 	//listen for keyDown
-	$(document).keydown(function(e){
+	$(document).on("keydown",function(e){
 		if(keyDown == false){
 			keyDown = true;
 			switch(e.which){
@@ -61,6 +60,43 @@ $(document).ready(function(){
 						keyDown = false;
 					}
 					break;
+			}
+		}
+	});
+	var touchStartLocationY;
+	var touchStartLocationX;
+
+	$(document).on("touchstart",function(e){
+		touchStartLocationY = e.originalEvent.touches[0].clientY;
+		touchStartLocationX = e.originalEvent.touches[0].clientX;
+
+	});
+	$(document).on("touchend", function(e){
+		touchEndLocationY = e.originalEvent.changedTouches[0].clientY;
+		touchEndLocationX = e.originalEvent.changedTouches[0].clientX;
+
+		if(Math.abs(touchStartLocationY - touchEndLocationY) > Math.abs(touchStartLocationX - touchEndLocationY)){
+			if(touchStartLocationY > touchEndLocationY + 5 && currentStep[1] == 1 && currentStep[0] != 2){
+				//slide Down
+				moveBackground(currentStep,"down");
+				slideContent(currentStep,"down");
+			}
+			else if(touchStartLocationY < touchEndLocationY - 5 && currentStep[1] == 1 && currentStep[0] != 0){
+				//slide Up
+				moveBackground(currentStep,"up");
+				slideContent(currentStep,"up");
+			}
+		}
+		else{
+			if(touchStartLocationX > touchEndLocationX + 5 && currentStep[0] == 1 && currentStep[1] != 2){
+				//slide right
+				moveBackground(currentStep,"right");
+				slideContent(currentStep,"right");
+			}
+			else if(touchStartLocationX < touchEndLocationX - 5 && currentStep[0] == 1 && currentStep[1] != 0){
+				//slide left
+				moveBackground(currentStep,"left");
+				slideContent(currentStep,"left");
 			}
 		}
 	});
