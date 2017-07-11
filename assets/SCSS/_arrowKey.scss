@@ -1,0 +1,80 @@
+//This file is used for the arrow keys on the homePage
+
+
+#arrowKey{
+	position: absolute;
+	left: 50vw;
+	transform: translateX(-50%);
+	bottom: 5vh;
+	width: 120px;
+	height: 100px;
+	z-index: 5;
+	&div{
+		&img{
+			width: 50px;
+			height: 50px;
+		}
+	}
+}
+
+
+.arrow{
+	position: absolute;
+	.border{
+		fill:#FFFFFF;
+		}
+		.center{
+			fill:#FFFFFF;
+			fill-opacity:0.2;
+			transition:fill-opacity 0.15s linear;
+			&:hover{
+				fill-opacity:1;
+		}
+	}
+	&#arrowUp{
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) rotate(270deg);
+	}
+	&#arrowDown{
+		right: 50%;
+		bottom: calc(50% - 6px);
+		transform: translateX(50%) translateY(50%) rotate(90deg) ;
+	}
+	&#arrowRight{
+		right: 5px;
+		bottom: calc(50% - 5px);
+		transform: translateY(50%) rotate(0deg);
+	}
+	&#arrowLeft{
+		left: 5px;
+		bottom: calc(50% - 5px);
+		transform: translateY(50%) rotate(180deg);
+	}
+	&object{
+		position: absolute;
+		z-index: 10;
+	}
+}
+
+.fadeOutArrow{
+	fill-opacity: 1;
+	animation-name: fadeOutArrow;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+.fadeInArrow{
+	animation-name: fadeInArrow;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeOutArrow {
+	0% {fill-opacity: 1;}
+	100% {fill-opacity: 0.2;}
+}
+
+@keyframes fadeInArrow {
+	0% {fill-opacity: 0.2;}
+	100% {fill-opacity: 1;}
+}

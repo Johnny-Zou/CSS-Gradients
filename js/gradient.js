@@ -25,6 +25,7 @@ $(document).ready(function(){
 					if(currentStep[1] == 1 && currentStep[0] != 0){
 						moveBackground(currentStep,"up");
 						slideContent(currentStep,"up");
+						setActiveArrow(currentStep,"up");
 					}
 					else{
 						keyDown = false;
@@ -35,6 +36,7 @@ $(document).ready(function(){
 					if(currentStep[1] == 1 && currentStep[0] != 2){
 						moveBackground(currentStep,"down");
 						slideContent(currentStep,"down");
+						setActiveArrow(currentStep,"down");
 					}
 					else{
 						keyDown = false;
@@ -45,6 +47,7 @@ $(document).ready(function(){
 					if(currentStep[0] == 1 && currentStep[1] != 0){
 						moveBackground(currentStep,"left");
 						slideContent(currentStep,"left");
+						setActiveArrow(currentStep,"left");
 					}
 					else{
 						keyDown = false;
@@ -55,6 +58,7 @@ $(document).ready(function(){
 					if(currentStep[0] == 1 && currentStep[1] != 2){
 						moveBackground(currentStep,"right");
 						slideContent(currentStep,"right");
+						setActiveArrow(currentStep,"right");
 					}
 					else{
 						keyDown = false;

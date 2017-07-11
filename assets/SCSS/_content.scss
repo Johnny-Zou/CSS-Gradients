@@ -77,7 +77,7 @@
 
 @keyframes slideLeftOut{
 	0% {left: 0;}
-	100% {left: -100vw;}
+	100% {left: -100vw;visibility: hidden;}
 }
 
 .slideLeftOut {
@@ -87,7 +87,7 @@
 }
 @keyframes slideRightOut{
 	0% {left: 0;}
-	100% {left: 100vw;}
+	100% {left: 100vw;visibility: hidden;}
 }
 
 .slideRightOut {
@@ -98,7 +98,7 @@
 
 @keyframes slideDownOut{
 	0% {top: 0;}
-	100% {top: 100vh;}
+	100% {top: 100vh;visibility: hidden;}
 }
 
 .slideDownOut {
@@ -109,7 +109,7 @@
 
 @keyframes slideUpOut{
 	0% {top: 0;}
-	100% {top: -100vh;}
+	100% {top: -100vh;visibility: hidden;}
 }
 .slideUpOut {
     animation-name: slideUpOut;
